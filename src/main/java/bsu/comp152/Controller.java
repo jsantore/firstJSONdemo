@@ -25,6 +25,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadData();
+        //add comment for temo
         ListControl.getSelectionModel().selectedItemProperty().addListener(
                 new ChangeListener<DataHandler.recipeDataType>(){
                     @Override
