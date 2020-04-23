@@ -43,7 +43,7 @@ public class Controller implements Initializable {
         var site = "http://www.recipepuppy.com/api/?";
         var params = getQueryParameters();
         var query = site+params;
-
+        //here is where I am adding the data to the list box
         Model = new DataHandler(query);
         var recipeList = Model.getData();
         ObservableList<DataHandler.recipeDataType> dataToShow = FXCollections.observableArrayList(recipeList);
