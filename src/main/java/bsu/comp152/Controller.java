@@ -31,6 +31,7 @@ public class Controller implements Initializable {
                     @Override
                     public void changed(ObservableValue<? extends DataHandler.recipeDataType> observable, DataHandler.recipeDataType oldValue, DataHandler.recipeDataType newValue) {
                         var recipe = ListControl.getSelectionModel().getSelectedItem();
+                        Title.setText("title:" +recipe.title);
                         //put the selected data into the text boxes
                         Title.setText(recipe.title);
                         Ingredients.setText(recipe.ingredients);
