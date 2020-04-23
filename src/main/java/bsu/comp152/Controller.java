@@ -33,7 +33,6 @@ public class Controller implements Initializable {
                         var recipe = ListControl.getSelectionModel().getSelectedItem();
                         Title.setText("title:" +recipe.title);
                         //put the selected data into the text boxes
-                        Title.setText(recipe.title);
                         Ingredients.setText(recipe.ingredients);
                     }
                 }
