@@ -6,9 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.Optional;
@@ -18,6 +16,11 @@ public class Controller implements Initializable {
     @FXML
     private ListView<DataHandler.recipeDataType> ListControl;
     private DataHandler Model;
+    @FXML
+    private TextArea Ingredients;
+    @FXML
+    private TextField Title;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -27,10 +30,8 @@ public class Controller implements Initializable {
                     @Override
                     public void changed(ObservableValue<? extends DataHandler.recipeDataType> observable, DataHandler.recipeDataType oldValue, DataHandler.recipeDataType newValue) {
                         var recipe = ListControl.getSelectionModel().getSelectedItem();
-                        Alert recipeInfo = new Alert(Alert.AlertType.INFORMATION);
-                        recipeInfo.setTitle("Info for"+recipe.title);
-                        recipeInfo.setHeaderText("Ingredients:" + recipe.ingredients);
-                        recipeInfo.showAndWait();
+                        Title.setText(recipe.title);
+                        Ingredients.setText(recipe.ingredients);
                     }
                 }
 
